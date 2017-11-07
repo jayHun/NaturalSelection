@@ -40,6 +40,17 @@ public class Source2 {
 			remain_list.add(remain[i]);
 		}
 		
+		/*
+		runchild_list.add(1);
+		runchild_list.add(2);
+		runchild_list.add(3);
+		rungroup_list.add(runchild_list);
+		runchild_list=new ArrayList<Integer>();
+		runchild_list.add(4);
+		runchild_list.add(5);
+		runchild_list.add(6);
+		rungroup_list.add(runchild_list);
+		*/
 		
 		nat_select(rungroup_list, runchild_list, reserve_list, buffer_list, remain_list, s);
 		
@@ -129,7 +140,7 @@ public class Source2 {
 					}
 					buffer_list.addAll(reserve_list);
 					rungroup_list.add(runchild_list);
-					runchild_list.clear();
+					runchild_list=new ArrayList<Integer>();
 					reserve_list.clear();
 				}
 			}
@@ -143,13 +154,13 @@ public class Source2 {
 						buffer_list.remove(buffer_list.indexOf(Collections.min(buffer_list)));	//버퍼에서 삭제
 					}
 					rungroup_list.add(runchild_list);
-					runchild_list.clear();
+					runchild_list=new ArrayList<Integer>();
 					for(int i=0; i<reserve_list.size(); i++){
 						runchild_list.add(Collections.min(reserve_list));
 						reserve_list.remove(reserve_list.indexOf(Collections.min(reserve_list)));
 					}
 					rungroup_list.add(runchild_list);
-					runchild_list.clear();
+					runchild_list=new ArrayList<Integer>();
 					reserve_list.clear();
 				}else{
 					for(int i=0; i<buffer_list.size(); i++){
@@ -157,13 +168,13 @@ public class Source2 {
 						buffer_list.remove(buffer_list.indexOf(Collections.min(buffer_list)));	//버퍼에서 삭제
 					}
 					rungroup_list.add(runchild_list);
-					runchild_list.clear();
+					runchild_list=new ArrayList<Integer>();
 					for(int i=0; i<reserve_list.size(); i++){
 						runchild_list.add(Collections.min(reserve_list));
 						reserve_list.remove(reserve_list.indexOf(Collections.min(reserve_list)));
 					}
 					rungroup_list.add(runchild_list);
-					runchild_list.clear();
+					runchild_list=new ArrayList<Integer>();
 					reserve_list.clear();
 				}
 			}
